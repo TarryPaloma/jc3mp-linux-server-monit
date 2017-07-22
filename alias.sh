@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NAME='$alias' #GET THIS FROM MAIN SCRIPT
-DIR=/home/"$username"/jc3mp/'$NAME' #GET USERNAME FROM MAIN SCRIPT!
+NAME='replaceme' #GET THIS FROM MAIN SCRIPT
+DIR=/home/'replaceme'/jc3mp/'$NAME' #GET USERNAME FROM MAIN SCRIPT!
 LOG_FILE="$NAME.log"
 CONSOLE_LOG="logs/console.log"
 PID_FILE="$NAME.pid"
