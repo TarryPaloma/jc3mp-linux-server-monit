@@ -2,7 +2,7 @@
 
 NAME='replaceme' #GET THIS FROM MAIN SCRIPT
 DIR=/home/'replaceme'/jc3mp/'replaceme'  #GET USERNAME FROM MAIN SCRIPT!
-MONITDIR="$DIR""monit/"
+MONITDIR="$DIR""/monit/"
 LOG_FILE="$NAME.log"
 CONSOLE_LOG="logs/console.log"
 PID_FILE="$NAME.pid"
@@ -22,7 +22,6 @@ echo $(date +"%T-%d\%m\%Y") >> $MONITDIR$LOG_FILE
 echo "$NAME not running..."
 echo "$DIR ... $PID_FILE" >> $MONITDIR$LOG_FILE
 echo "$MONITDIR$PID_FILE"
-echo "LEL"
 screen -dm sh -c 'echo $$ > '$MONITDIR$PID_FILE' ; cd '$DIR' ; $CMD | tee -a '$DIR$CONSOLE_LOG
 while [ ! -s $MONITDIR$PID_FILE ]; do sleep 1; done
 PPIDSH=`cat $MONITDIR$PID_FILE`
