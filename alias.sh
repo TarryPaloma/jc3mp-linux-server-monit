@@ -22,7 +22,7 @@ echo $(date +"%T-%d\%m\%Y") >> $MONITDIR$LOG_FILE
 echo "$NAME not running..."
 echo "$DIR ... $PID_FILE" >> $MONITDIR$LOG_FILE
 echo "$MONITDIR$PID_FILE"
-screen -dm sh -c 'echo $$ > '$MONITDIR$PID_FILE' ; cd '$DIR' ; $CMD | tee -a '$DIR$CONSOLE_LOG
+screen -dm sh -c 'echo $$ > '$MONITDIR$PID_FILE' ; cd '$DIR' ; '$CMD' | tee -a '$DIR$CONSOLE_LOG
 while [ ! -s $MONITDIR$PID_FILE ]; do sleep 1; done
 PPIDSH=`cat $MONITDIR$PID_FILE`
 echo "PPID is $PPIDSH" >> $MONITDIR$LOG_FILE
